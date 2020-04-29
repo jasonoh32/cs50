@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Looked Up
+{% endblock %}
+
+{% block main %}
+    <p>One serving of {{ quote["food"] }} contains
+    {{ quote["protein"] }} of protein,
+    {{ quote["sodium"] }} of sodium,
+    {{ quote["sugars"] }} of sugar,
+    {{ quote["total fat"] }} of fat,
+    {{ quote["calories"] }} calories,
+    {{ quote["carbs"] }} of carbs,
+    {{ quote["cholesterol"] }} of cholesterol, and
+    {{ quote["fiber"] }} of fiber.
+    </p>
+{% endblock %}

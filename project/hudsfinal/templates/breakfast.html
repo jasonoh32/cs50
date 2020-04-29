@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Breakfast
+{% endblock %}
+
+{% block main %}
+    <form action ="/breakfast" method ="post">
+        <h1>HUDS's Breakfast Menu</h1>
+        <div class ="form-group">
+            <input autocomplete ="off" autofocus class ="form-control" name ="id" placeholder ="food id" type ="text" required/>
+        </div>
+        <div class ="form-group">
+            <input autocomplete ="off" autofocus class ="form-control" name ="servings" placeholder ="servings" type ="number" min ="1" required />
+        </div>
+        <button class ="btn btn-primary" type ="submit">Add to Nutrition Report</button>
+        <h1></h1>
+        <span>
+            <a href="/breakfast">Breakfast</a>&nbsp;|&nbsp;<a href="/lunch">Lunch</a>&nbsp;|&nbsp;<a href="/dinner">Dinner</a>
+        </span>
+        <h1></h1>
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Breakfast Menu Items</th>
+                    <th>ID</th>
+                </tr>
+            </thead>
+            {% for id in breakfast %}
+                <tr>
+                    <td>{{ dictionary[id] }}   </td>
+                    <td>{{ id }}   </td>
+                </tr>
+            {% endfor %}
+        </table>
+    </form>
+{% endblock %}

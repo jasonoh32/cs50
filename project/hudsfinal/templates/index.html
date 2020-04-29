@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+    <h1>My Meal Plan</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Food</th>
+                <th>Servings</th>
+                <th>Protein (g)</th>
+                <th>Sodium (mg)</th>
+                <th>Sugar (g)</th>
+                <th>Fat (g)</th>
+                <th>Carbs (g)</th>
+                <th>Cholestrol (mg)</th>
+                <th>Fiber (g)</th>
+                <th>Calories</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for transaction in transactions %}
+                <tr>
+                    <td>{{ transaction.date }}</td>
+                    <td>{{ transaction.food }}</td>
+                    <td>{{ transaction.servings }}</td>
+                    <td>{{ transaction.protein }}</td>
+                    <td>{{ transaction.sodium }}</td>
+                    <td>{{ transaction.sugar }}</td>
+                    <td>{{ transaction.fat }}</td>
+                    <td>{{ transaction.carbs }}</td>
+                    <td>{{ transaction.cholesterol }}</td>
+                    <td>{{ transaction.fiber }}</td>
+                    <td>{{ transaction.calories }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+            <tr>
+                <b><td><span style="font-weight:bold">TOTALS</span></td></b>
+                <td></td>
+                <td></td>
+                <td><span style="font-weight:bold">{{ protein_total }}</span></td>
+                <td><span style="font-weight:bold">{{ sodium_total }}</span></td>
+                <td><span style="font-weight:bold">{{ sugar_total }}</span></td>
+                <td><span style="font-weight:bold">{{ fat_total }}</span></td>
+                <td><span style="font-weight:bold">{{ carbs_total }}</span></td>
+                <td><span style="font-weight:bold">{{ cholesterol_total }}</span></td>
+                <td><span style="font-weight:bold">{{ fiber_total }}</span></td>
+                <td><span style="font-weight:bold">{{ calories_total }}</span></td>
+            </tr>
+    </table>
+{% endblock %}

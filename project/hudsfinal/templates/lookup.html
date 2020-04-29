@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Look up
+{% endblock %}
+
+{% block main %}
+    <form action="/lookup" method="post">
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="id" placeholder="Food id" type="text" required/>
+        </div>
+
+        <button class="btn btn-primary" type="submit">Look Up</button>
+    </form>
+{% endblock %}
